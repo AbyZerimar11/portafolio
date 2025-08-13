@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abigail Reyes — QA Engineer & Front-end</title>
+  <meta name="description" content="Portafolio de Abigail Reyes — QA Engineer con experiencia en pruebas manuales, automatizadas, APIs y desarrollo front-end. Oaxaca, México.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#071028;
+      --card:#0b1220;
+      --muted:#98a0b3;
+      --accent1:#ff7a59;
+      --accent2:#6b5cff;
+      --glass: rgba(255,255,255,0.03);
+      --maxw:1100px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,Arial;
+      background:linear-gradient(180deg,#071028 0%, #081226 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .container{max-width:var(--maxw); margin:0 auto; padding:28px;}
+    header{
+      position:sticky; top:0; z-index:60;
+      background:linear-gradient(180deg, rgba(11,18,32,0.7), rgba(11,18,32,0.4));
+      backdrop-filter: blur(6px); border-bottom:1px solid rgba(255,255,255,0.02);
+    }
+    .nav-inner{max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 22px;}
+    .logo{display:flex; gap:12px; align-items:center; text-decoration:none; color:inherit}
+    .logo img{height:44px; width:44px; border-radius:10px; background:var(--glass); padding:6px}
+    nav ul{list-style:none; display:flex; gap:18px; margin:0; padding:0; align-items:center}
+    nav a{color:var(--muted); text-decoration:none; font-weight:600; font-size:15px}
+    nav a:hover{color:var(--accent1)}
+
+    /* HERO */
+    .hero{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center; padding:36px 0;}
+    .kicker{display:inline-block; font-weight:700; color:var(--accent1); background:rgba(255,122,89,0.06); padding:6px 10px; border-radius:8px; font-size:13px}
+    h1{font-size:34px; margin:12px 0 10px}
+    p.lead{color:var(--muted); margin:0 0 18px; max-width:680px}
+
+    .cta-row{display:flex; gap:12px; margin-top:12px}
+    .btn{display:inline-block; padding:12px 18px; border-radius:12px; font-weight:700; text-decoration:none}
+    .btn-primary{background:linear-gradient(90deg,var(--accent2),var(--accent1)); color:white}
+    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.03)}
+    .avatar{width:250px; height:140px; border-radius:10px; overflow:hidden; background:#0e1726}
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
+
+    /* sections */
+    section{padding:60px 0; border-top:1px solid rgba(255,255,255,0.02)}
+    .section-title{display:flex; flex-direction:column; gap:6px; margin-bottom:18px}
+    .section-title h2{margin:0; font-size:20px}
+    .section-title p{margin:0; color:var(--muted); font-size:14px}
+
+    /* skills badges */
+    .badges{display:flex; flex-wrap:wrap; gap:12px}
+    .badge{padding:10px 14px; border-radius:10px; font-weight:700}
+
+    /* skills with progress */
+    .skill{display:flex; align-items:center; gap:14px; margin-bottom:12px}
+    .skill .meta{width:180px}
+    .progress{flex:1; background:rgba(255,255,255,0.02); border-radius:999px; height:12px; overflow:hidden}
+    .bar{height:100%; border-radius:999px}
+
+    /* services */
+    .services{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .service{background:var(--card); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.02)}
+
+    /* portfolio grid */
+    .portfolio-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .project{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,0.03)}
+    .project img{width:100%; height:180px; object-fit:cover; border-radius:8px; display:block; margin-bottom:10px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+    .tag{background:rgba(255,255,255,0.03); padding:6px 10px; border-radius:8px; font-size:13px; color:var(--muted)}
+
+    /* contact */
+    .contact-grid{display:grid; grid-template-columns:1fr 360px; gap:20px}
+    input, textarea{width:100%; padding:10px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.05); background:transparent; color:inherit}
+    textarea{min-height:120px; resize:vertical}
+
+    footer{padding:28px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,0.02)}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      nav ul{display:none}
+      .portfolio-grid{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr}
+    }
+
+    /* small util */
+    .muted{color:var(--muted); font-size:14px}
+    .small{font-size:13px; color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <a class="logo" href="#">
+        <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/1747968796958.jpeg?text=AR" alt="Abigail">
+        <div>
+          <strong>Abigail Reyes</strong>
+          <div class="small">QA Engineer • Front-end • Docente</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#portfolio">Portafolio</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section id="home" class="hero" aria-label="Hero">
+      <div>
+        <span class="kicker">QA Engineer • Oaxaca, México</span>
+        <h1>Hola — soy <span style="background:linear-gradient(90deg,var(--accent2),var(--accent1)); -webkit-background-clip:text; color:transparent">Abigail Reyes</span><br><small style="color:var(--muted); font-weight:600">Garantizo software confiable con enfoque en pruebas manuales y automatizadas</small></h1>
+        <p class="lead">QA Tester con más de 4 años de experiencia en proyectos web, móviles y APIs. Experta en diseño y ejecución de pruebas manuales, automatización con Selenium y Python, pruebas de API con Postman y en integrar buenas prácticas de testing en equipos ágiles.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Contactar</a>
+          <a class="btn btn-ghost" href="mailto:aby.11jm@gmail.com">aby.11jm@gmail.com</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/abigailreyesqa/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+          <div class="card" style="display:inline-flex; gap:12px; align-items:center;">
+            <div style="font-weight:800">4+ años</div>
+            <div class="small">Experiencia en QA y desarrollo</div>
+          </div>
+          <div class="card" style="display:inline-flex; gap:12px; align-items:center;">
+            <div style="font-weight:800">Sector financiero</div>
+            <div class="small">Proyectos con regulaciones bancarias</div>
+          </div>
+        </div>
+      </div>
+      <aside class="card" aria-hidden="false" style="max-width:400px;">
+        <div style="display:flex; gap:12px; align-items:center;">
+          <div class="avatar">
+            <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/1747968796958.jpeg?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Abigail Reyes">
+          </div>
+          <div>
+            <strong style="display:block">Abigail Reyes Ramírez</strong>
+            <div class="small">QA Engineer — Oaxaca, México</div>
+            <div class="muted" style="margin-top:8px">Especialidades: pruebas manuales, automatización, APIs, pruebas móviles, SQL</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <strong>Contacto</strong>
+          <div class="small" style="margin-top:6px">Tel: 9514399577<br>Email: <a href="mailto:aby.11jm@gmail.com">aby.11jm@gmail.com</a></div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:8px;">
+          <a class="btn btn-ghost" href="http://bytesolucionesoax.com/wp-content/uploads/2025/08/QA-Engenieer-Abigail-Reyes-R.pdf" target="_blank" download>Descargar CV</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/abigailreyesqa/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        <hr style="margin:16px 0; border-color:#ddd;" />
+
+        <div>
+          <button class="btn-primary toggle-btn" aria-expanded="false" aria-controls="certs" 
+            style="width:100%; font-weight:600; font-size:0.95rem; padding:8px 12px; border:none; border-radius:5px; cursor:pointer;">
+            Ver certificaciones y educación ▼
+          </button>
+          <div id="certs" style="display:none; margin-top:12px; font-size:0.9rem; color:#444; max-height:300px; overflow-y:auto;">
+            <ul style="padding-left:1.2rem; margin:0 0 8px 0; list-style-type: disc;">
+              <li><strong>TripleTen</strong>: Bootcamp QA Engineer (2025)</li>
+              <li><strong>Vanguardia Académica</strong>: Diplomado en Diseño Gráfico (2021 – 2022)</li>
+              <li><strong>Universidad Internacional de la Rioja (México)</strong>:
+                <ul style="list-style-type: circle; margin-left:1rem; padding-left:0;">
+                  <li>Maestría en Marketing Digital y Comercio Electrónico (2019 – 2021)</li>
+                  <li>Máster en Mercadotecnia Digital y E-commerce (2019 – 2021)</li>
+                  <li>Diplomado en E-business (2020 – 2021)</li>
+                  <li>Diplomado en Transformación Digital (2020)</li>
+                  <li>Diplomado en Marketing Estratégico (2019 – 2020)</li>
+                </ul>
+              </li>
+              <li><strong>Universidad Nacionalista México</strong>: Licenciatura en Sistemas Computacionales (2014 – 2017)</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <script>
+        document.querySelector('.toggle-btn').addEventListener('click', function() {
+          const content = document.getElementById('certs');
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+          content.style.display = expanded ? 'none' : 'block';
+          this.textContent = expanded ? 'Ver certificaciones y educación ▼' : 'Ocultar certificaciones y educación ▲';
+        });
+      </script>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">
+        <h2>Sobre mí</h2>
+        <p>Resumen profesional</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 360px; gap:22px; align-items:start;">
+        <div class="card">
+          <p><strong>Soy QA Engineer</strong> con experiencia en pruebas manuales y automatizadas, apasionada por garantizar productos de alta calidad que realmente aporten valor a los usuarios. He trabajado en proyectos web y móviles y participo en todas las fases del ciclo de vida del software: desde la planificación en equipos Scrum hasta la ejecución de pruebas end-to-end con Selenium.</p>
+
+          <p>Mi formación en Sistemas Computacionales y mi Maestría en Marketing Digital me dan una visión integral del producto: entiendo tanto la lógica técnica como las necesidades del usuario final. Tengo experiencia en desarrollo front-end y conocimientos en back-end, lo que facilita la comunicación con equipos de desarrollo y la identificación temprana de riesgos.</p>
+
+          <p>Recientemente he automatizado pruebas para apps tipo e-commerce y movilidad urbana (tipo Uber), estructurando proyectos de testing con Page Object Model, separación por capas y pruebas independientes con PyTest.</p>
+
+          <div style="margin-top:12px;">
+            <strong>Características personales</strong>
+            <ul class="small" style="margin-top:8px">
+              <li>Organizada y proactiva</li>
+              <li>Atención al detalle</li>
+              <li>Trabajo colaborativo en equipos ágiles</li>
+              <li>Enfoque en mejora continua</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="card">
+          <strong>Herramientas & Tecnologías</strong>
+          <div style="margin-top:8px" class="badges">
+                    <span class="badge" style="background:rgba(107,92,255,0.1); color:var(--accent2)">Endtest</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">Postman</span>
+            <span class="badge" style="background:rgba(107,92,255,0.1); color:var(--accent2)">SoapUI</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">Selenium</span>
+            <span class="badge" style="background:rgba(107,92,255,0.1); color:var(--accent2)">Visual Studio Code</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">Android Studio</span>
+            <span class="badge" style="background:rgba(107,92,255,0.1); color:var(--accent2)">SQL</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">Jira</span>
+            <span class="badge" style="background:rgba(107,92,255,0.1); color:var(--accent2)">PyCharm</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">Git & GitHub</span>
+            <span class="badge" style="background:rgba(107,92,255,0.1); color:var(--accent2)">Asana</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">Trello</span>
+            <span class="badge" style="background:rgba(107,92,255,0.1); color:var(--accent2)">Figma</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">Illustrator</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">InDesign</span>
+            <span class="badge" style="background:rgba(107,92,255,0.1); color:var(--accent2)">PHP</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">Agile</span>
+            <span class="badge" style="background:rgba(107,92,255,0.1); color:var(--accent2)">HTML / CSS / JavaScript</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">Scrum</span>
+            <span class="badge" style="background:rgba(107,92,255,0.1); color:var(--accent2)">Python</span>
+            <span class="badge" style="background:rgba(255,122,89,0.08); color:var(--accent1)">Chrome DevTools</span>
+
+          </div>
+          
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-title">
+        <h2>Mis habilidades laborales</h2>
+        <p>Áreas en las que aporto valor y experiencia comprobada</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 360px; gap:18px;">
+        <div>
+          <!-- Skills con porcentaje (visual) -->
+          <div class="skill">
+            <div class="meta"><strong>QA Manual</strong><div class="small">Casos de prueba, reporting en Jira</div></div>
+            <div class="progress" aria-hidden="true"><div class="bar" style="width:92%; background:linear-gradient(90deg,var(--accent2),var(--accent1));"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="meta"><strong>Automatización (Selenium + Python)</strong><div class="small">PyTest, Page Object Model</div></div>
+            <div class="progress"><div class="bar" style="width:88%; background:linear-gradient(90deg,var(--accent1),var(--accent2));"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="meta"><strong>API Testing (Postman / SoapUI)</strong><div class="small">Diseño de casos y validación de endpoints</div></div>
+            <div class="progress"><div class="bar" style="width:90%; background:linear-gradient(90deg,var(--accent2),var(--accent1));"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="meta"><strong>SQL & DB Analysis</strong><div class="small">Consultas, análisis de logs, Postgres</div></div>
+            <div class="progress"><div class="bar" style="width:82%; background:linear-gradient(90deg,var(--accent1),var(--accent2));"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="meta"><strong>Front-end (HTML/CSS/JS)</strong><div class="small">Prototipos y fixes básicos</div></div>
+            <div class="progress"><div class="bar" style="width:72%; background:linear-gradient(90deg,var(--accent2),var(--accent1));"></div></div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <strong>Soft skills</strong>
+          <ul class="small" style="margin-top:10px">
+            <li>Liderazgo y comunicación</li>
+            <li>Organización y gestión del tiempo</li>
+            <li>Resolución de problemas</li>
+            <li>Documentación técnica clara</li>
+          </ul>
+
+          <div style="margin-top:14px">
+            <strong>Idiomas</strong>
+            <div class="small" style="margin-top:6px">Español (Nativo) — Inglés (Técnico)</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-title">
+        <h2>Servicios</h2>
+        <p>Lo que puedo ofrecer a tu equipo o proyecto</p>
+      </div>
+
+      <div class="services">
+        <div class="service">
+          <h3>QA Manual & Diseño de Casos</h3>
+          <p class="small">Análisis de requisitos, diseño de casos de prueba, ejecución manual, reportes en Jira y seguimiento de bugs.</p>
+        </div>
+        <div class="service">
+          <h3>Automatización de Pruebas</h3>
+          <p class="small">Automatización con Selenium + Python, PyTest, Page Object Model y pruebas independientes con buenas prácticas.</p>
+        </div>
+        <div class="service">
+          <h3>Pruebas API & Backend</h3>
+          <p class="small">Postman, SoapUI y diseño de pruebas para endpoints REST; validación de respuestas, códigos y estructuras JSON.</p>
+        </div>
+        <div class="service">
+          <h3>Pruebas Móviles</h3>
+          <p class="small">Ejecución en emuladores y dispositivos reales (Android Studio), checklists y reportes de resultados.</p>
+        </div>
+        <div class="service">
+          <h3>Front-end Support</h3>
+          <p class="small">Fixes rápidos en HTML/CSS/JS, revisión de UI y microinteracciones para mejorar la experiencia.</p>
+        </div>
+        <div class="service">
+          <h3>Docencia & Mentoria</h3>
+          <p class="small">Clases y talleres de programación y QA para distintos niveles, con enfoque práctico y gamificado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="section-title">
+        <h2>Portafolio</h2>
+        <p>Proyectos destacados — QA, automatización y pruebas</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Project UNO -->
+        <article class="project">
+        <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/Image.jpg?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Pruebas de regresión">
+        <h3>Pruebas de regresión — Urban Routes</h3>
+        <p class="small">Planificación y ejecución de suites de regresión funcional: creación de test cases, priorización por severity y generación de reportes con resultados y seguimiento de bugs.</p>
+        <div class="tags">
+          <span class="tag">Test Cases</span><span class="tag">Regresión</span><span class="tag">Jira</span>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1B1rjiFJpqkj1rsj-6OQ7dFborIZWKdz6/edit?usp=sharing&ouid=109603264823921859977&rtpof=true&sd=true" 
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Ver Documento 📄
+        </a>
+      </article>
+      <!-- Project DOS -->
+      <article class="project">
+        <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/Image-1.png?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Pruebas funcionales para compartir automóvil">
+        <h3>Proyecto de Diseño de Pruebas – Función de Compartir Automóvil en Urban Routes</h3>
+          <p class="small">
+            En este proyecto de QA, analicé requisitos funcionales y apliqué técnicas de diseño de pruebas para construir una base sólida con clases de equivalencia y valores límite.  
+            Diseñé mapas mentales, diagramas de flujo y casos funcionales para validar cálculos dinámicos, documentando todo en Google Docs y Sheets.
+          </p>
+          <div class="tags">
+            <span class="tag">Diseño de pruebas</span>
+            <span class="tag">Equivalencias</span>
+            <span class="tag">Análisis valores límite</span>
+            <span class="tag">Pruebas funcionales</span>
+            <span class="tag">Documentación</span>
+          </div>
+        <a href="https://docs.google.com/document/d/1TP3lg4r7fUmk9PpSIOaMCFr9zfOhhEEY/edit?rtpof=true&sd=true" 
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Ver Documento 📄
+        </a>
+      </article>
+      <!-- Project TRES -->
+      <article class="project">
+        <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/Image-2-scaled.png?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Pruebas funcionales para compartir automóvil">
+        <h3>Pruebas funcionales para compartir automóvil — Urban Routes</h3>
+        <p class="small">
+          Pruebas manuales en distintos navegadores, diseño y ejecución de casos, reporte de bugs en Jira y elaboración de informes.
+        </p>
+        <div class="tags">
+          <span class="tag">Pruebas manuales</span>
+          <span class="tag">Diseño de casos</span>
+          <span class="tag">Reporte de bugs</span>
+          <span class="tag">Jira</span>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1b8hgkI-VmRh40AipjJ5zJJNkJWWhvSjQ/edit?usp=sharing&ouid=109603264823921859977&rtpof=true&sd=true" 
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Ver Documento 📄
+        </a>
+      </article>
+        <!-- Project CUATRO -->
+        <article class="project">
+          <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/image-20250307-023625.png?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Urban Grocers - API Testing">
+          <h3>Pruebas de API en Urban.Grocers</h3>
+          <p class="small">
+            Realicé pruebas manuales con Postman para validar endpoints clave del backend: agregar productos a kits y validar servicio de entrega.  
+            Diseñé listas de comprobación basadas en requisitos técnicos, validé respuestas y reporté bugs detalladamente en Jira.  
+            Documenté resultados en Google Sheets y Docs, fortaleciendo habilidades en pruebas API, análisis técnico y documentación QA.
+          </p>
+          <div class="tags">
+            <span class="tag">Pruebas API</span>
+            <span class="tag">Postman</span>
+            <span class="tag">REST</span>
+            <span class="tag">Diseño de pruebas</span>
+            <span class="tag">Jira</span>
+          </div>
+          <a href="https://docs.google.com/spreadsheets/d/1Njps7Bi-TSDZDEu3tQyyj54JVBgp6qOI/edit?usp=sharing&ouid=109603264823921859977&rtpof=true&sd=true" 
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Ver Documento 📄
+        </a>
+        </article>
+
+        <!-- Project CINCO -->
+        <article class="project">
+          <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/cinco.png?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Análisis de logs">
+          <h3>Urban.Lunch — Pruebas móviles Android</h3>
+          <p class="small">Ejecución de pruebas funcionales en emulador y dispositivo real; reporte de incidencias en Jira y elaboración de informe de pruebas con evidencias. Uso de Android Studio para emulación y debugging.</p>
+          <div class="tags">
+            <span class="tag">Android Studio</span><span class="tag">QA Móvil</span><span class="tag">Jira</span><span class="tag">Figma</span>
+          </div>
+          <a href="https://docs.google.com/spreadsheets/d/1diLTCtKI60XlU68aT0kh3Rmw3hlWfDkS/edit?usp=sharing&ouid=109603264823921859977&rtpof=true&sd=true" 
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Ver Documento 📄
+          </a>
+        </article>
+
+        <!-- Project SEIS -->
+        <article class="project">
+          <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/bd.png?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Análisis de logs">
+          <h3>Análisis de logs y consultas a DB — App de Taxis</h3>
+          <p class="small">Filtrado de logs por patrones (grep), extracción de errores y consultas avanzadas a PostgreSQL para validar hipótesis y detectar fallos en producción.</p>
+          <div class="tags">
+            <span class="tag">Linux</span><span class="tag">Bash</span><span class="tag">PostgreSQL</span>
+          </div>
+          <a href="https://docs.google.com/document/d/1DAwudkWRVpaNZXBasoiQwL7msxXctX71/edit?usp=sharing&ouid=109603264823921859977&rtpof=true&sd=true" 
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Ver Documento 📄
+          </a>
+        </article>
+        <!-- Project SIETE -->
+        <article class="project">
+          <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/siete.png?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Análisis de logs">
+          <h3>Proyecto de Automatización QA para Urban Grocers</h3>
+          <p class="small">
+            Completé la automatización de pruebas para el campo <code>name</code> en la creación de kits de productos, validando reglas de negocio con Python, pytest y requests.  
+            Integré autenticación por token y usé Git/GitHub para control de versiones y colaboración.
+          </p>
+          <div class="tags">
+            <span class="tag">Automatización</span>
+            <span class="tag">Testing API REST</span>
+            <span class="tag">Python</span>
+            <span class="tag">Pytest</span>
+            <span class="tag">Git & GitHub</span>
+          </div>
+          <a href="https://github.com/AbyZerimar11/qa-project-Urban-Grocers-app-es" 
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Ver Proyecto 📄
+          </a>
+        </article>
+        <!-- Project OCHO -->
+        <article class="project">
+          <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/OCHO.png?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Análisis de logs">
+          <h3>Automatización de pruebas para Urban Routes</h3>
+          <p class="small">
+            Cloné el repositorio, trabajé localmente con Git y GitHub, y desarrollé pruebas automatizadas en Python para el flujo completo de pedir un taxi.  
+            Implementé manejo de modales, simulé interacciones y documenté el proyecto con un README para entrega.
+          </p>
+          <div class="tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Python</span>
+            <span class="tag">PyCharm</span>
+            <span class="tag">Selenium</span>
+            <span class="tag">pytest</span>
+            <span class="tag">Automatización</span>
+            <span class="tag">README</span>
+          </div>
+          <a href="https://github.com/AbyZerimar11/qa-project-Urban-Grocers-app-es" 
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Ver Proyecto 📄
+          </a>
+        </article>
+        <!-- Project NUEVE -->
+        <article class="project">
+          <img src="http://bytesolucionesoax.com/wp-content/uploads/2025/08/scooter.png?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Análisis de logs">
+          <h3>Proyecto Integral QA – Aplicación Urban Scooter</h3>
+          <p class="small">
+            Desarrollé pruebas completas para la aplicación Urban Scooter, incluyendo teoría de pruebas, validación en la app web y móvil, y pruebas de API.  
+            Realicé mapas mentales, listas de comprobación y casos de prueba para validar funcionalidades, interfaces y lógica de negocio.  
+            Documenté resultados y reporté errores con precisión para asegurar la calidad del software.
+          </p>
+          <div class="tags">
+            <span class="tag">Pruebas Manuales-API-Móvil</span>
+            <span class="tag">Jira</span>
+            <span class="tag">Listas de Comprobación</span>
+            <span class="tag">Mapas Mentales</span>
+            <span class="tag">Documentación</span>
+            <span class="tag">Selenium</span>
+            <span class="tag">Python</span>
+            <span class="tag">Reporte de Bugs</span>
+          </div>
+          <a href="https://docs.google.com/document/d/14glAKaFqihf0K1HkWyJG9_g9debcaPsF/edit?usp=sharing&ouid=109603264823921859977&rtpof=true&sd=true" 
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Ver Proyecto 📄
+          </a>
+        </article>
+
+        <!-- Project 6 (ejemplo front-end) -->
+        <article class="project">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Front-end projects">
+          <h3>Desarrollo Front-end — Soluciones web</h3>
+          <p class="small">Desarrollo y mantenimiento de más de 15 sitios y componentes front-end; optimización de rendimiento y mejora de UX mediante ajustes CSS y JS.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contacto</h2>
+        <p>¿Hablamos sobre tu proyecto o una vacante?</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="card" onsubmit="event.preventDefault(); alert('Gracias — mensaje simulado. Añade aquí tu endpoint o integración de correo.');">
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <input type="text" placeholder="Tu nombre" required style="flex:1">
+            <input type="email" placeholder="Tu correo" required style="flex:1">
+          </div>
+          <div style="margin-top:10px;">
+            <input type="text" placeholder="Asunto">
+          </div>
+          <div style="margin-top:10px;">
+            <textarea placeholder="Mensaje"></textarea>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+            <div class="small">O escríbeme directamente: <a href="mailto:aby.11jm@gmail.com">aby.11jm@gmail.com</a></div>
+            <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+          </div>
+        </form>
+
+        <aside class="card">
+          <strong>Datos</strong>
+          <div class="small" style="margin-top:8px">Abigail Reyes Ramírez<br>Oaxaca, México<br>Tel: 9514399577<br>Email: <a href="mailto:aby.11jm@gmail.com">aby.11jm@gmail.com</a></div>
+
+          <div style="margin-top:12px">
+            <strong>Enlaces</strong>
+            <div class="small" style="margin-top:8px">
+              <a href="https://www.linkedin.com/in/abigailreyesqa/" target="_blank" rel="noopener">LinkedIn</a><br>
+              <!-- Si tienes GitHub o portfolio real, añade aquí -->
+              <a href="https://github.com/AbyZerimar11" onclick="alert('Añade enlace a GitHub o portafolio')">GitHub</a>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <strong>Disponibilidad</strong>
+            <div class="small" style="margin-top:6px">Abierta a oportunidades como QA Engineer — roles remotos o en Oaxaca.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <!-- SECCIÓN FOOTER -->
+    <footer>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;">
+        <div>
+          <strong>Abigail Reyes</strong>
+          <div class="small">QA Engineer • Front-end</div>
+        </div>
+        <div class="small">© <span id="yr"></span> Abigail Reyes • Oaxaca, México</div>
+        <div class="small">
+          <a href="https://www.linkedin.com/in/abigailreyesqa/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
